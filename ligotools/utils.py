@@ -69,7 +69,7 @@ def plot_helper(make_plots, det, time, timemax, SNR, template_match, eventname, 
 		plt.grid('on')
 		plt.xlabel('Time since {0:.4f}'.format(timemax))
 		plt.legend(loc='upper left')
-		plt.savefig(eventname+"_"+det+"_SNR."+plottype)
+		plt.savefig('figures/' + eventname+"_"+det+"_SNR."+plottype)
 
 		plt.figure(figsize=(10,8))
 		plt.subplot(2,1,1)
@@ -92,7 +92,7 @@ def plot_helper(make_plots, det, time, timemax, SNR, template_match, eventname, 
 		plt.ylabel('whitened strain (units of noise stdev)')
 		plt.legend(loc='upper left')
 		plt.title(det+' Residual whitened data after subtracting template around event')
-		plt.savefig(eventname+"_"+det+"_matchtime."+plottype)
+		plt.savefig('figures/' + eventname+"_"+det+"_matchtime."+plottype)
 
 		# -- Display PSD and template
 		# must multiply by sqrt(f) to plot template fft on top of ASD:
@@ -107,4 +107,4 @@ def plot_helper(make_plots, det, time, timemax, SNR, template_match, eventname, 
 		plt.ylabel('strain noise ASD (strain/rtHz), template h(f)*rt(f)')
 		plt.legend(loc='upper left')
 		plt.title(det+' ASD and template around event')
-		plt.savefig(eventname+"_"+det+"_matchfreq."+plottype)
+		plt.savefig('figures/' + eventname+"_"+det+"_matchfreq."+plottype)
