@@ -16,13 +16,13 @@ external_toc_exclude_missing = False
 external_toc_path = '_toc.yml'
 html_baseurl = ''
 html_favicon = ''
-html_logo = ''
+html_logo = 'logo.png'
 html_sourcelink_suffix = ''
 html_theme = 'sphinx_book_theme'
 html_theme_options = {'search_bar_text': 'Search this book...', 'launch_buttons': {'notebook_interface': 'classic', 'binderhub_url': 'https://mybinder.org', 'jupyterhub_url': '', 'thebe': False, 'colab_url': ''}, 'path_to_docs': '', 'repository_url': 'https://github.com/UCB-stat-159-s22/hw06-Stephenouu', 'repository_branch': 'main', 'google_analytics_id': '', 'extra_navbar': 'Powered by <a href="https://jupyterbook.org">Jupyter Book</a>', 'extra_footer': '', 'home_page_in_toc': True, 'use_repository_button': True, 'use_edit_page_button': False, 'use_issues_button': True}
 html_title = 'Hw06-Readligo-Stephenouu'
 jupyter_cache = ''
-jupyter_execute_notebooks = 'force'
+jupyter_execute_notebooks = 'off'
 language = None
 latex_engine = 'pdflatex'
 myst_enable_extensions = ['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist']
