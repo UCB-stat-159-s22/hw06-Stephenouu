@@ -1,10 +1,11 @@
+import matplotlib
+matplotlib.use('Agg')
 from ligotools.utils import whiten, write_wavfile, reqshift, plot_helper
 import numpy as np
 from scipy.interpolate import interp1d
 from ligotools import readligo as rl
 import os
 import matplotlib.pyplot as plt
-import matplotlib
 
 def test_whiten():
 	freqs = np.arange(0, 5, 0.25)
@@ -46,13 +47,15 @@ def test_plot_helper():
 	strain_H1_whitenbp = np.random.uniform(1, 500, 2000)
 	fs = 4000
 	strain_L1_whitenbp = np.random.uniform(1, 500, 2000)
-	matplotlib.use('Agg')
 	plot_helper(make_plots, det, time, timemax, SNR, template_match, eventname, plottype, tevent, 
 					  template_fft, datafreq, d_eff, freqs, data_psd, strain_H1_whitenbp, fs, 
 					  strain_L1_whitenbp)
-	assert os.path.exist("data/" + eventname + "_" + det + "matchfreq." + plottype)
-	assert os.path.exist("data/" + eventname + "_" + det + "matchtime." + plottype)
-	assert os.path.exist("data/" + eventname + "_" + det + "SNR." + plottype)
-	os.remove("data/" + eventname + "_" + det + "matchfreq." + plottype)
-	os.remove("data/" + eventname + "_" + det + "matchtime." + plottype)
-	os.remove("data/" + eventname + "_" + det + "SNR." + plottype)
+	first_path = "figures/" + eventname + "_" + det + "_" + "matchfreq." + plottype
+	second_path = "figures/" + eventname + "_" + det + "_" + "matchtime." + plottype
+	thrid_path = "figures/" + eventname + "_" + det + "_" + "SNR." + plottype
+	assert os.path.exists(first_path)
+	assert os.path.exists(second_path)
+	assert os.path.exists(thrid_path)
+	os.remove(first_path)
+	os.remove(second_path)
+	os.remove(thrid_path)
